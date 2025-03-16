@@ -8,10 +8,29 @@
             "args": [
                 "${workspaceFolder}/app/main.py"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}/app"
+            },
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "label": "Clear tasks.yaml",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/python",
+            "args": [
+                "${workspaceFolder}/app/clear_tasks_yaml.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/app"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
             }
         }
     ]
