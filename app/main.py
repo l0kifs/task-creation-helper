@@ -32,6 +32,7 @@ class Task(BaseModel):
     assignee: str | None = None
     priority: str | None = None
     links: list[Link] | None = None
+    labels: list[str] | None = None
 
     @field_validator("priority")
     @classmethod
@@ -63,7 +64,8 @@ def create_task(task: Task) -> dict:
         summary=task.summary,
         description=task.description,
         priority=priority,
-        assignee_id=assignee_id
+        assignee_id=assignee_id,
+        labels=task.labels
     )
     if task.links:
         for link in task.links:
