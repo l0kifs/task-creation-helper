@@ -2,6 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class EnvVars(BaseSettings):
+    JIRA_URL: str
     JIRA_EMAIL: str
     JIRA_API_TOKEN: str
         

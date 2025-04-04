@@ -13,11 +13,11 @@ class IssueType(Enum):
     TASK = '10002'
     
 class Priority(Enum):
+    LOWEST = '10002'
     LOW = '4'
     MEDIUM = '3'
     HIGH = '2'
     HIGHEST = '10003'
-    LOWEST = '10002'
     
 class LinkType(Enum):
     BLOCKS = '10000'

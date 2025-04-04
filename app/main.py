@@ -42,15 +42,12 @@ class Task(BaseModel):
         return value
 
 
-def create_task(task: Task) -> dict:
+def create_task(task: Task):
     """
     Create a task with the given parameters.
 
     Args:
         task (Task): The task object containing the task details.
-
-    Returns:
-        dict: A dictionary representing the created task.
     """
     priority = [priority_enum for priority_enum in Priority if priority_enum.name == task.priority][0] if task.priority else None
     try:
@@ -75,9 +72,7 @@ def create_task(task: Task) -> dict:
                 inward_issue_key=result['key'],
                 outward_issue_key=link.issue_key
             )
-    print(f"Task created: {result['key']}")
-
-    return {}
+    print(f"Task created: {get_env_vars().JIRA_URL}/browse/{result['key']}")
     
 
 if __name__ == "__main__":
